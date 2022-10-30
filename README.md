@@ -1,5 +1,4 @@
-# FuzzyNet
-##  FuzzyNet
+# FuzzyNet: A Fuzzy Attention Module for Polyp Segmentation
 
 ### Requirements
 
