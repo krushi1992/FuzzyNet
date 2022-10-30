@@ -3,7 +3,7 @@ from torch.autograd import Variable
 import os
 import argparse
 from datetime import datetime
-from lib.PraNet_Res2Net import PraNet
+from lib.Fuzzy_Res2Net import FuzzyNet
 from utils.dataloader import get_loader,test_dataset 
 from utils.utils import clip_gradient, adjust_lr, AvgMeter
 import torch.nn.functional as F
@@ -159,7 +159,7 @@ if __name__ == '__main__':
     dict_plot = {'CVC-300':[], 'CVC-ClinicDB':[], 'Kvasir':[], 'CVC-ColonDB':[], 'ETIS-LaribPolypDB':[], 'test':[]}
     # ---- build models ----
     # torch.cuda.set_device(0)  # set your gpu device
-    model = PraNet()
+    model = FuzzyNet()
      
     macs, params = get_model_complexity_info(model, (3, 352, 352), as_strings=True)
     print('{:<30}  {:<8}'.format('Computational complexity: ', macs))
