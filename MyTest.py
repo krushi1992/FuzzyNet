@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import numpy as np
 import os, argparse
 from scipy import misc
-from lib.Fuzzy_Res2Net import PraNet
+from lib.Fuzzy_Res2Net import FuzzyNet
 from utils.dataloader import test_dataset
 import imageio
 
@@ -29,7 +29,7 @@ for _data_name in ['CVC-300', 'CVC-ClinicDB', 'Kvasir', 'CVC-ColonDB', 'ETIS-Lar
     data_path = '/home/kpatel/projects/def-wangcs/kpatel/cross_transformer/data_poly/TestDataset/{}/'.format(_data_name)
     save_path = './results/PraNet/{}/'.format(_data_name)
     opt = parser.parse_args()
-    model = PraNet()
+    model = FuzzyNet()
     model.load_state_dict(torch.load(opt.pth_path))
     model.cuda()
     model.eval()
