@@ -95,10 +95,10 @@ class aggregation(nn.Module):
         return x
 
 
-class PraNet(nn.Module):
+class FuzzyNet(nn.Module):
     # res2net based encoder decoder
     def __init__(self, channel=32):
-        super(PraNet, self).__init__()
+        super(FuzzyNet, self).__init__()
         # ---- ResNet Backbone ----
         self.resnet = res2net50_v1b_26w_4s(pretrained=True)
         # ---- Receptive Field Block like module ----
@@ -190,7 +190,7 @@ class PraNet(nn.Module):
 
 
 if __name__ == '__main__':
-    ras = PraNet().cuda()
+    ras = FuzzyNet().cuda()
     input_tensor = torch.randn(1, 3, 352, 352).cuda()
 
     out = ras(input_tensor)
