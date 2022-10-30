@@ -26,10 +26,10 @@ test
 ### 1. Training
 
 ```bash
-python MyTrain.py  --mode train  --train_data_dir /path-to-train_data  --valid_data_dir  /path-to-valid_data
+python MyTrain.py  
 ```
 
 ###  2. Testing
 
 ```bash
-python MyTest.py  --mode test  --load_ckpt checkpoint --test_data_dir  /path-to-test_data
+python MyTest.py  
